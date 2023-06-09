@@ -1,0 +1,46 @@
+/* id > class > tags */
+/* A tag can have multiple classes but can't have more than 1 id. */
+/* Pseudo-class: It can be defined as the property where we can do something on the basis of the state of that tag like hover
+    (It can be identified by colon(:).
+*/
+
+/* ------------------------------- TAG SELECTORS ---------------------- */
+
+body {
+    background-color: #EAF6F6;
+}
+
+/* h1, h3 {
+    color: #66bfbf;
+} */
+
+hr {
+    /* background-color: white; */
+    border-style: dotted none none;
+    border-color: grey;
+    border-width: 5px;
+    /* border-top-style: dotted; */
+    width: 5%;
+}
+
+img {
+    background-color: lightblue;
+}
+
+img:hover {
+    background-color: yellow;
+}
+
+/* ------------------------------- CLASS SELECTORS ---------------------- (can be used for many tags in one html page)*/
+.heading1, .heading3{
+    color: #66bfbf;
+}
+/* 
+.heading3{
+    color: #66bfbf;
+} */
+
+/* ------------------------------- ID SELECTORS ---------------------- (for unique tags in one html page)*/
+#form {
+    color: red;
+}

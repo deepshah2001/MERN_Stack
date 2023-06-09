@@ -1,0 +1,110 @@
+SQL -> Structured Query Language. Contains data in the form of tables but can be very uneven if some entries are "NULL". Also k/a Relational databases as it relates table to each other. Less scalable comparitively.
+
+NoSQL -> Not only Structured Query Language. Contains data in the form of JSON objects. Also k/a Non-Relational databases as it has no relationship with other data but can be referred to other item through references. (Prefered when there is one to many relationship like instagram). More Scalable.
+
+MYSQL -> It is an open source relational database management system which uses SQL (Structured Query Language). Used mainly for insertion, deletion etc. operations and it supports cross platform i.e. can be able to run in various different platforms like windows, linus etc. It is a leading database in web development.
+
+Relational Database -> It is based on "relational model" and uses the concept of "tables" i.e. "rows and columns". And each table is able to relate to each other using "KEYS".
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SQL:-
+
+    CRUD => (Create, Read, Update, Destroy)
+    
+    1. Select - It is used to select the data entries from a desired table.
+        SELECT * FROM Customers;
+
+        OR
+
+        SELECT column1, column2, ...
+        FROM table_name;
+
+    2. Create - It is used to create table and databases etc. 
+        CREATE TABLE table_name (
+            column1 datatype,
+            column2 datatype,
+        ....
+        );
+
+    3. Insert - It is used to insert new records in a table.    
+        INSERT INTO table_name (column1, column2, column3, ...)
+        VALUES (value1, value2, value3, ...);
+        
+        OR
+
+        INSERT INTO table_name
+        VALUES (value1, value2, value3, ...);
+    
+    4. Where - It is used to select data with a particular situation/condition.
+        SELECT column1, column2, ...
+        FROM table_name
+        WHERE condition;
+
+    5. Update - It is used to update/modify the existing records in a table.
+        UPDATE table_name
+        SET column1 = value1, column2 = value2, ...
+        WHERE condition;
+
+    6. Alter - It is used to add, delete, or modify columns in an existing table. Also used to add and drop various constraints on an existing table.
+        ALTER TABLE table_name
+        ADD/DROP column_name datatype;
+
+        ALTER TABLE table_name
+        RENAME COLUMN old_name to new_name;
+
+        ALTER TABLE table_name
+        ALTER COLUMN column_name datatype;
+
+    7. Delete - It is used to delete existing records in a table.
+        DELETE FROM table_name WHERE condition;
+
+        (If no where condition then all rows will be deleted from the table.)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Primary Key -> It uniquely identifies each record in a table. It must contain UNIQUE values, and cannot contain NULL values.
+                  A table can have only ONE primary key.
+
+2. Foreign Key -> It is used to prevent actions that would destroy links between tables and is used to link 2 tables togerther.
+                  A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+                  The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+JOINS -> It is used to combine rows from two or more tables, based on a related column between them.
+
+1. Inner Join - Returns records that have matching values in both tables.
+
+    SELECT column_name(s)
+    FROM table1
+    INNER JOIN table2
+    ON table1.column_name = table2.column_name;
+
+2. LEFT (OUTER) JOIN - Returns all records from the left table, and the matched records from the right table.
+
+    SELECT column_name(s)
+    FROM table1
+    LEFT JOIN table2
+    ON table1.column_name = table2.column_name;
+
+3. RIGHT (OUTER) JOIN - Returns all records from the right table, and the matched records from the left table.
+
+    SELECT column_name(s)
+    FROM table1
+    RIGHT JOIN table2
+    ON table1.column_name = table2.column_name;
+
+4. FULL (OUTER) JOIN - Returns all records when there is a match in either left or right table.
+
+    SELECT column_name(s)
+    FROM table1
+    FULL OUTER JOIN table2
+    ON table1.column_name = table2.column_name;

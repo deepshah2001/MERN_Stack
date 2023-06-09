@@ -1,0 +1,11 @@
+Templating is used to have lesser repetitive codes and when the content of different HTML pages are nearly similar.
+
+We can do templating using various tools but we're using EJS(Embedded JavaScript Templating)
+
+In EJS -> <%= variable_name %>
+
+In app.js -> when render then in foo: 'FOO', foo is the key and is the variable name in ejs file while 'FOO' is the value and is from app.js file itself.
+
+using <%.......%>, we can write javascript code in our ejs file and render it as html and works only for single line at a time.
+
+EJS allows us to make layouts so that we can include the same code to multiple pages on our site like headers and footers.

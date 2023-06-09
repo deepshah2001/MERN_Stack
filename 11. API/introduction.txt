@@ -1,0 +1,11 @@
+API (Application Programming Interface) - A set of commands, functions, protocols and objects that programmers can use to create software or interact with the external system.
+It is a contract between developers and data providers.
+
+1. Endpoints - A location or url where the API has been hosted. Eg -> https://api.kanye.rest/
+2. Paths - Used to narrow down on a specific piece of data from a server. Eg-> https://sv443.net/jokeapi/v2/joke/programming , here the endpoint is just "https://sv443.net/jokeapi/v2/joke" this 		and further everything is the prescribed as path for a particular request. Like giving only programming jokes according to this.
+3. Parameters - Used to narrow down on a specific piece of data from a server. Eg-> https://sv443.net/jokeapi/v2/joke/programming?contains=debugging , here the endpoint is just 					"https://sv443.net/jokeapi/v2/joke" this and further "?" everything is the prescribed as parameters for custom queries i.e. for particular request. Like giving only programming 			jokes containing word "debugging" according to this. If more than 1 queries than after "?", they are separated by "&" sign. Like ../programming?								contains=debugging&type=single and so on.
+4. Authentication - It is used to monetize the use of data and also to limit the use of data to a particular threshold. So, when we as a developer access a paricular API then they verify us and 				charge according to our usage.
+
+Postman - It is a tool used for testing API and it is free and easy to use.
+
+JSON -> JavaScript Object Notation. Structure is just like objects in JS. It is used to so that it is easily readable by human and collapsed down to take up as small space as possible.

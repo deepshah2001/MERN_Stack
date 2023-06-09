@@ -1,0 +1,2 @@
+Mangoose -> It is ODM (Object Document Mapper) as it speaks with the database of MongoDB and connect it with Node application.
+            It simplifies the writing of validation code, boilerplate and makes code shorter and easier.

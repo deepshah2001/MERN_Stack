@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <!-- If we don't have an action attribute in our form tag then by default it'll send our data to the current page its on("/"). -->
+    <form action="/" method="post">
+        <input type="text" name="num1" placeholder="Number 1">
+        <select name="symbol">
+            <option name="+">+</option>
+            <option name="-">-</option>
+            <option name="*">*</option>
+            <option name="/">/</option>
+        </select>
+        <input type="text" name="num2" placeholder="Number 2">
+        <br>
+        <br>
+        <button type="submit" name="Submit">Calculate</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+MongoDB -> NoSQL based database system used to manage several data using JSON objects.
+
+Commands (CRUD) =>
+    1. show dbs - to show all the databases available in mongodb.
+    2. use database_name - to create a new database. Eg: use shopDb;
+    3. db - to show the database name in which we're currently in.
+    4. show collections - to show all the collections in the particular database.
+    5. Create - to insert new documents(data) into a collection. If thT collection doesnot exist then it will automatically create a new one.
+            db.collection_name.insertOne({JSONObject})
+            db.collection_name.insertMany({JSONObjects})
+
+            Eg: a) db.products.insertOne({_id: 1, name: "Pen", Price: 1.20});
+                b) db.products.insertMany( [
+                        { item: "card", qty: 15 },
+                        { item: "envelope", qty: 20 },
+                        { item: "stamps" , qty: 30 }
+                    ] );
+    6. Read - used to retrieve documents(data) from collection(table).
+            db.collection_name.find(query, projection)      [Both query and projection are optional in this case.]
+            If not passed any arguments then will return the full collection.
+            projections are used to choose which column to return. (Just like SELECT).
+
+            _id will always come if not specified in projects i.e. _id: 0;
+
+            Eg: a) db.products.find();
+                b) db.products.find({name: "Pencil"});
+                c) db.products.find({Price: {$gt: 1}});
+                d) db.products.find({Price: {$gt: 1.0}}, {name: 1, _id: 1});        // Here 1 means true (display) and 0 means false (Don't Display). If not specified then 0.
+
+    7. Update - used to modify existing documents in a collection.
+            db.collection_name.updateOne();
+            db.collection_name.updateMany();
+            db.collection_name.replaceOne();
+
+            Eg: a) db.products.updateOne({_id: 1}, {$set: {stock: 32}})
+        
+    8. Delete - used to remove documents from the collection.
+            db.collection_name.deleteOne();
+            db.collection_name.deleteMAny();
+
+            Eg: a) db.products.deleteOne({_id: 2});
